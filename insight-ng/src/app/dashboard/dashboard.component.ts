@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 
 import { ChartsService } from "../shared/chart.service";
 //import * as Map from "assets/default_theme/js/lib/vector-map/jquery.vmap";
@@ -208,7 +208,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       zw: "5.57"
     };
     var somedata = $("#vmap").val();
-    alert(somedata);
+
     $("#vmap").vectorMap({
       map: "world_en",
       backgroundColor: null,
