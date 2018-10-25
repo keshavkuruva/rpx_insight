@@ -30,18 +30,13 @@
               "src/assets/default_theme/css/google_api_fonts_opsans.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/popper.js/dist/popper.min.js",
+              "src/assets/default_theme/js/vendor/jquery-2.1.4.min.js",
+              "src/assets/default_theme/js/popper.min.js",
               "node_modules/datatables.net/js/jquery.dataTables.min.js",
               "node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
               "src/assets/default_theme/js/plugins.js",
               "src/assets/default_theme/js/main.js",
-              "src/assets/default_theme/js/widgets.js",
-              "src/assets/default_theme/js/dashboard.js",
               "src/assets/default_theme/js/lib/vector-map/jquery.vmap.js",
-              "src/assets/default_theme/js/lib/vector-map/jquery.vmap.min.js",
-              "src/assets/default_theme/js/lib/vector-map/jquery.vmap.sampledata.js",
               "src/assets/default_theme/js/lib/vector-map/country/jquery.vmap.world.js"
             ]
           },
