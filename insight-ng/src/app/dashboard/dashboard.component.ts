@@ -1,9 +1,7 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
 
 import { ChartsService } from "../shared/chart.service";
-//import * as Map from "assets/default_theme/js/lib/vector-map/jquery.vmap";
 import { MapSampleData } from "./map.sample.data";
-import * as $ from "jquery";
 
 @Component({
   selector: "app-dashboard",
@@ -16,6 +14,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     private _chart: ChartsService,
     private _sampeldata: MapSampleData
   ) {}
+  sample_data: any;
 
   ngOnInit() {
     this._chart.graph1();
@@ -23,25 +22,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this._chart.graph3();
     this._chart.graph4();
     this._chart.traficChart();
-    //this.mapChart();
   }
+  //This need to be load after the dom elements are rendered.
   ngAfterViewInit() {
-    window["$"] = window["jQuery"] = $;
-    let sample_data = this._sampeldata.SampleData();
-    console.log(sample_data);
-    $("#vmap").vectorMap({
-      map: "world_en",
-      backgroundColor: null,
-      color: "#ffffff",
-      hoverOpacity: 0.7,
-      selectedColor: "#1de9b6",
-      enableZoom: true,
-      showTooltip: true,
-      values: sample_data,
-      scaleColors: ["#1de9b6", "#03a9f5"],
-      normalizeFunction: "polynomial"
-    });
+    this.sample_data = this._sampeldata.SampleData();
+    this._chart.mapChart(this.sample_data);
   }
 
-  mapChart(): void {}
 }

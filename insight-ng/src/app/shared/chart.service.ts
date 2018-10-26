@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import * as Chart from "assets/default_theme/js/lib/chart-js/Chart.bundle";
 
+declare var jQuery: any;
 @Injectable()
 export class ChartsService {
   graph1(): void {
@@ -82,7 +83,6 @@ export class ChartsService {
       }
     });
   }
-
   graph2(): void {
     //WidgetChart 2
     var grph2 = document.getElementById("widgetChart2");
@@ -440,5 +440,20 @@ export class ChartsService {
 
   random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  mapChart(sampleData) {
+    jQuery("#vmap").vectorMap({
+      map: "world_en",
+      backgroundColor: null,
+      color: "#ffffff",
+      hoverOpacity: 0.7,
+      selectedColor: "#1de9b6",
+      enableZoom: true,
+      showTooltip: true,
+      values: sampleData,
+      scaleColors: ["#1de9b6", "#03a9f5"],
+      normalizeFunction: "polynomial"
+    });
   }
 }
